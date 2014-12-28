@@ -108,7 +108,7 @@ func GetRootErr(err error) error {
 //GetErrorLoc returns the location at which the error took place, if the error
 //passed to GetRootErr is not an error trace (errs.ErrsErr) the location is
 //denoted as unknown.
-func GetErrorLoc(err error) ErrorLocation {
+func GetErrLoc(err error) ErrorLocation {
 	if err != nil {
 		if errWithLoc, ok := err.(*ErrsErr); ok {
 			return errWithLoc.Loc
