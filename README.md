@@ -5,10 +5,12 @@ Author: [Tylor Arndt]
 
 1.0 - First public release (Bug reports and PRs are welcome)
 
-### Goal
-While the "go way" of explcitly handling errors + using defer has worked very well for me. I have found in large Go applications that error which "trickle up" from multiple levels of abstraction can be frustrating to track down.
+### Motivation
+While the "go way" of explcitly handling errors + using defer has worked very well for me. I have found in large Go applications that errors which "trickle up" from multiple levels of abstraction can be frustrating to track down a source of; this package seeks to make that task easier.
 
-This package also supports converting panics to errors (`errs.PanicToErr`) and a few functions for manipulating the tracable error it returns such as `errs.GetRootErr` and `errs.GetErrLoc`. 
+This package also supports a few other useful tasks such as converting panics to errors (`errs.PanicToErr`) and a few functions for manipulating the tracable error it returns such as `errs.GetRootErr` and `errs.GetErrLoc`. 
+
+*All externally exposed error and standard Go errors to this should be 100% interoperable with your existing code base*
 
 ### Basic Operations
  * `New(errMsg string, args ...interface{}) error`: Creates a new error in a similar manner to `fmt.Errorf`.
@@ -74,9 +76,4 @@ func FuncThatShouldNeverPanic() (err error) {
 ```
 
 [Tylor Arndt]:https://plus.google.com/u/0/+TylorArndt/posts
-[sync.Cond]:http://golang.org/pkg/sync/#Cond
 [errors.go]:https://github.com/tarndt/sema/blob/master/errors.go]
-
-
-
-
