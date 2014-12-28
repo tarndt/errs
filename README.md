@@ -3,7 +3,7 @@ errs: Debuggable errors for Go
 ### Author & Version
 Author: [Tylor Arndt]
 
-1.0 - First public release (Bug reports and PRs are welcome)
+1.0 - First public release (Bug reports, feature requests and PRs are welcome)
 
 ### Motivation
 While the "go way" of explcitly handling errors + using defer has worked very well for me. I have found in large Go applications that errors which "trickle up" from multiple levels of abstraction can be frustrating to track down a source of; this package seeks to make that task easier.
